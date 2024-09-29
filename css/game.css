@@ -1,0 +1,21 @@
+/*to do:
+    make board 4 by 4
+    center text inside each tile
+
+*/
+.tile{
+    background-color: aqua;
+    width: 10vh;
+    height: 10vh;
+    color:rgb(245, 213, 213);
+    font-size: 2em;
+    border:3px solid black;
+    /* display: flex;
+    align-items: center;
+    justify-items: center; */
+    
+}
+
+#board {
+    display: block;
+}
