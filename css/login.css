@@ -1,0 +1,122 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(https://t3.ftcdn.net/jpg/01/26/89/26/360_F_126892670_kNYKeWkBnoCEaSNoyalxCJ31hzJ4ammA.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    height:60px;
+    font-size:14pt;
+    border: 5px, dotted, rgb(16, 44, 87);
+    border-radius: 10px;
+}
+
+.poster {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color: rgb(233, 200, 116);
+    padding: 2rem;
+    line-height: 6em;
+    border: 10px solid rgb(163, 67, 67);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 50%; */
+    opacity: 80%;
+}
+
+#logInForm {
+    font-family: Montserrat;
+    color: rgb(16, 44, 87);
+
+}
+
+#signupForm {
+    font-family: Montserrat;
+    color: rgb(16, 44, 87);
+}
+
+label {
+    font-size: 1.5em;
+}
+
+.logInMessage {
+    font-family: Montserrat;
+    font-size: 1.5em;
+    color: rgba(16, 44, 87, 0.733);
+
+}
+
+
+#displaysLoginOrSignup {
+    display: inline-block;
+    width: 900px;
+    background-color: rgba(255, 255, 255, 0.589);
+    padding: 3em;
+
+
+}
+#hurryUpMessage {
+    font-family: Montserrat;
+    font-size: 0.7em;
+
+}
+
+#goToGameButton {
+    display: none
+}
+
+#secondPlayButton {
+    display: none
+
+}
+
+#Kowalski {
+    font-size: 1.1em;
+    background-color: white;
+}
+
+#makered {
+    color: rgb(163, 67, 67);
+}
+
+h1 {
+    font-family: "Bungee Tint";
+    font-size: 4em;
+}
+
+
+h2 {
+    font-family: Montserrat;
+    font-size: 2em;
+    color: rgb(16, 44, 87);
+}
+
+
+button {
+        background-color: #54678d;
+        color: white;
+        padding: 0.4em;
+        font-size: 1em;
+        border-radius: 0.5em;
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+
+    }
+    
+button:hover {
+        background-color:rgb(16, 44, 87);
+    }
+

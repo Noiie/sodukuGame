@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Tint&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="box">
+        <div class="poster">
+            <h1>Waddle to the Cone</h1>
+            <h2>Help free poor <span id="Kowalski">Kowalski!</span></h2>
+
+            <div id="displaysLoginOrSignup">
+                <h3 class="logInMessage">Have a record of breaking penguins out of cages? <span id="makered">Log in</span>:</h3>
+                <form id="logInForm">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" class="input" id="loginUsername" name="loginUsername" placeholder="Enter Username" required>
+
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" class="input" id="loginPassword" name="loginPassword" placeholder="Enter Password" required>
+
+                    <div id="seeIfLoginValidButton">
+                        <button type="button" onclick="seeIfLoginValid()">Submit</button>
+                    </div>
+
+                    <div id="playButton" style="display: none;">
+                        <button type="button" onclick="window.location.href = 'html/home.html'">Play</button>
+                    </div>
+                </form>
+
+                <h3 class="logInMessage">New to the anarchy? <span id="makered">Sign up</span>:</h3>
+                <form id="signupForm">
+                    <label for="signupUsername">Username:</label>
+                    <input type="text" class="input" id="signupUsername" name="signupUsername" placeholder="Enter Username" required onchange="MakeUserPasswordObjects()">
+
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" class="input" id="signupPassword" name="signupPassword" placeholder="Enter Password" required onchange="MakeUserPasswordObjects()">
+
+                    <div id="SignedIn">
+                        <button type="button" onclick="SignedIn()">Submit</button>
+                    </div>
+                    <div id="secondPlayButton" style="display: none;">
+                        <button type="button" onclick="window.location.href = 'html/home.html'">Play</button>
+                    </div>
+                </form>
+            </div>
+
+            <h3 id="hurryUpMessage">He's waiting. Just sign up already. Or log in.</h3>
+
+            <script src="java/login.js"></script>
+        </div>
+    </main>
+</body>
+</html>
