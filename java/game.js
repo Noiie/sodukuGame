@@ -106,8 +106,9 @@ function checkIfSodokuIsFilled() {
 
         for (let j = 0; j < arrayRows[i].length; j++) {
 
-            if (arrayRows[i][j] === "") {
+            if (arrayRows[i][j].trim() === "") {
 
+                console.log("in if");
                 document.getElementById("errorMessage").innerHTML = "Soduko is not completely filled out. finish it to free kowalski"
                 break;
             }
