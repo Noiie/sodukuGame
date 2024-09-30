@@ -3,19 +3,34 @@
     center text inside each tile
 
 */
-.tile{
-    background-color: aqua;
-    width: 10vh;
-    height: 10vh;
-    color:rgb(245, 213, 213);
+.tile {
+    background-color: blue;
+    width: 20vh;
+    height: 20vh;
+    color: rgb(24, 1, 1);
     font-size: 2em;
-    border:3px solid black;
-    /* display: flex;
-    align-items: center;
-    justify-items: center; */
-    
+    border: 3px solid black;
+    box-sizing: border-box;
+    text-align: center;
+
 }
 
 #board {
-    display: block;
+    width: 80vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#incompleteMessage {
+    color: red
+}
+
+.input-box {
+    width: 90%;
+    height: 90%;
+    background-color: blue;
+    font-size: 1em;
+
 }
