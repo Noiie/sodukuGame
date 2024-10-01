@@ -88,6 +88,14 @@ function storeUserInput(event, id) {
 
 }
 
+function submit() {
+    checkIfSodokuIsFilled()
+    checkRows()
+    checkCols()
+    checkBigSquare()
+}
+
+
 function checkIfSodokuIsFilled() {
     for (let i = 0; i < arrayRows.length; i++) {
 
@@ -101,15 +109,6 @@ function checkIfSodokuIsFilled() {
         }
     }
 }
-
-
-function submit() {
-    checkIfSodokuIsFilled()
-    checkRows()
-    checkCols()
-    checkBigSquare()
-}
-
 
 
 setRiddleTemplate();
