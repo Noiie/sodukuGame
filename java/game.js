@@ -1,5 +1,4 @@
 /* to do:
-    enable input
     make game checker function
 
 */
@@ -47,34 +46,26 @@ function makeDivs() {
 let riddleTemplates = [riddleTemplate1, riddleTemplate2]
 
 function riddleTemplate1() {
-    arrayRows[0][0] = "3";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[1][1] = "1";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[2][2] = "3";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[3][2] = "2";
-
-    document.getElementById("00").innerHTML = "3";
+    arrayRows[0][1] = "1";
+    document.getElementById("01").innerHTML = "1";
+    arrayRows[0][3] = "4";
+    document.getElementById("03").innerHTML = "4";
+    arrayRows[3][0] = "4";
+    document.getElementById("30").innerHTML = "4";
+    arrayRows[3][2] = "3";
+    document.getElementById("32").innerHTML = "3";
 
 }
 
 function riddleTemplate2() {
-    arrayRows[1][0] = "6";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[1][1] = "6";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[2][2] = "6";
-
-    document.getElementById("00").innerHTML = "3";
-    arrayRows[3][2] = "6";
-
+    arrayRows[0][1] = "3";
     document.getElementById("01").innerHTML = "3";
+    arrayRows[1][3] = "3";
+    document.getElementById("13").innerHTML = "3";
+    arrayRows[2][0] = "1";
+    document.getElementById("20").innerHTML = "1";
+    arrayRows[3][2] = "4";
+    document.getElementById("32").innerHTML = "4";
 }
 
 
@@ -107,9 +98,8 @@ function checkIfSodokuIsFilled() {
         for (let j = 0; j < arrayRows[i].length; j++) {
 
             if (arrayRows[i][j].trim() === "") {
-
-                console.log("in if");
                 document.getElementById("errorMessage").innerHTML = "Soduko is not completely filled out. finish it to free kowalski"
+                document.getElementById("errorMessage").style.color = "red"
                 break;
             }
         }
@@ -119,14 +109,16 @@ function checkIfSodokuIsFilled() {
 
 function submit() {
     checkIfSodokuIsFilled()
+    checkRows()
+    checkCols()
+    checkBigSquare()
 }
-makeDivs()
+
+
+
 setRiddleTemplate();
-enableTileInput()
-
-
-
-submitButton.addEventListener("click", submit)
+enableTileInput();
+submitButton.addEventListener("click", submit);
 
 
 
@@ -144,27 +136,58 @@ for (let i = 0; i < arrayRows.length; i++) {
         }
     }
         */
-
-for (let i = 0; i < arrayRows.length; i++) {
-    const unique = new Set(arrayRows[i])
-    if (unique.length !== arrayRows[i].length) {
-        console.log
-        // make it go to fail page
-    }
-
-}
-
-
-
-for (let j = 0; j < arrayRows.length; j++) {
-
-    let testArrayRow = []
+function checkRows() {
     for (let i = 0; i < arrayRows.length; i++) {
+        const unique = [...new Set(arrayRows[i])]
+        if (unique.length !== arrayRows[i].length) {
+            console.log("repetitive nr in row")
+            // make it go to fail page
+            redirectFail();
+        }
 
-        y = arrayRows[i][j]
-
-        testArrayRow.push(y)
     }
 }
 
+function checkCols() {
+    for (let j = 0; j < arrayRows.length; j++) {
 
+        let testArrayRow = []
+        for (let i = 0; i < arrayRows.length; i++) {
+            y = arrayRows[i][j]
+            testArrayRow.push(y)
+
+            const unique = [...new Set(testArrayRow[i])]
+            if (unique.length !== testArrayRow[i].length) {
+                console.log("repetitive nr in col")
+                // make it go to fail page
+                redirectFail();
+            }
+        }
+    }
+}
+
+let upperLeftQ = [arrayRows[0][0], arrayRows[0][1], arrayRows[1][0], arrayRows[1][1]]
+let lowerLeftQ = [arrayRows[2][0], arrayRows[2][1], arrayRows[3][0], arrayRows[3][1]]
+let lowerRightQ = [arrayRows[2][2], arrayRows[2][3], arrayRows[3][2], arrayRows[3][3]]
+let upperRightQ = [arrayRows[0][2], arrayRows[0][3], arrayRows[1][2], arrayRows[1][3]]
+let allQuadrants = [upperLeftQ, lowerLeftQ, lowerRightQ, upperRightQ]
+
+
+
+function checkBigSquare() {
+    if (size == 4) {
+        for (let i = 0; i < arrayRows.length; i++) {
+            const unique = [...new Set(allQuadrants[i])]
+            if (unique.length !== allQuadrants[i].length) {
+                console.log("repetitive nr in row")
+                // make it go to fail page
+                redirectFail();
+            }
+        }
+    }
+
+}
+
+function redirectFail() {
+    window.location.replace("../html/home.html");
+ } 

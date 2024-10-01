@@ -1,16 +1,20 @@
-/*to do:
-    make board 4 by 4
-    center text inside each tile
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 
-*/
 .tile {
-    background-color: blue;
+    background-color: rgba(182, 153, 82, 0.813);
     width: 20vh;
     height: 20vh;
-    color: rgb(24, 1, 1);
+    color: rgb(9, 7, 38);
     font-size: 2em;
-    border: 3px solid black;
+    border: 4px solid rgba(241, 240, 240, 0.54);
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 
 }
@@ -23,14 +27,124 @@
     flex-direction: row;
 }
 
-#incompleteMessage {
-    color: red
-}
 
 .input-box {
     width: 90%;
     height: 90%;
-    background-color: blue;
+    background-color: rgb(233, 200, 116);
     font-size: 1em;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.wholeScreen {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 150px auto 110px 110px 110px 110px;
+    grid-template-areas:
+        's s s s s s s s'
+        'h h h h h h h l'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m';
+}
+
+#snow {
+    grid-area: s;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#snow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+#logo {
+    grid-area: l;
+    height: 10px;
+    background-color: rgb(233, 200, 116);
+}
+
+header {
+    grid-area: h;
+    text-align: center;
+    line-height: 7em;
+    color: rgb(251, 248, 221);
+    background-color: rgb(163, 67, 67);
+    font-family: "Bebas Neue";
+    font-size: 1.5em;
+}
+
+main {
+    grid-area: m;
+    font-family: montserrat;
+    color: rgb(0, 31, 63);
+    background-color: rgb(0, 31, 63);
+}
+
+.poster {
+    margin: 5rem;
+    background-color: rgb(192, 214, 232);
+    opacity: 80%;
+    padding: 2rem;
+    line-height: 2em;
+    font-size: 1.5em;
+    color: rgb(0, 31, 63);
+    border: 10px solid rgb(163, 67, 67);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#story {
+    color: rgb(0, 31, 63);
+    font-size: 3rem;
+    font-family: Montserrat;
+}
+
+
+img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 1em;
+    border: 4px aolid #363062;
+    box-shadow: 7px 7px 7px #636b96;
+    cursor: pointer;
+
+
+}
+
+img:hover {
+    transform: scale(2, 2);
+
+}
+
+
+button {
+    background-color: #54678d;
+    color: white;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+
+}
+
+button:hover {
+    background-color: rgb(16, 44, 87);
 }
