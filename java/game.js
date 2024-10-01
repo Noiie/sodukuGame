@@ -117,21 +117,6 @@ enableTileInput();
 submitButton.addEventListener("click", submit);
 
 
-
-
-/* loop
-for (let i = 0; i < arrayRows.length; i++) {
-
-        for (let j = 0; j < arrayRows[i].length; j++) {
-        
-            if (arrayRows[i][j].innerHTML == "#"){
-            
-                arrayRows[i][j].innerHTML.style.opacity = "0"
-                
-            }
-        }
-    }
-        */
 function checkRows() {
     for (let i = 0; i < arrayRows.length; i++) {
         const unique = [...new Set(arrayRows[i])]
@@ -174,6 +159,8 @@ let allQuadrants = [upperLeftQ, lowerLeftQ, lowerRightQ, upperRightQ]
 //     window.location.replace("../html/home.html");
 //  }  
 redirectFail();
+
+
 function checkBigSquare() {
     if (size == 4) {
         for (let i = 0; i < arrayRows.length; i++) {
@@ -187,3 +174,5 @@ function checkBigSquare() {
     }
 
 }
+
+
