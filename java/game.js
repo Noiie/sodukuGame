@@ -1,10 +1,5 @@
-/* to do:
-    make game checker function
-
-*/
-
 let cl = console.log;
-let size = 4;
+let size = 9; // set to 4 or 9
 const board = document.querySelector("#board");
 let arrayRows = createBoard();
 let divs = makeDivs();
@@ -43,6 +38,46 @@ function makeDivs() {
     }
 }
 
+//adapt styling for gamesize
+function adatpCssToGamesize(){
+    if(size = 4){
+        document.querySelector(".tile").style.width
+    }
+}
+
+function adatpCssToGamesize() {
+    const board = document.querySelector('#board');
+    const tiles = document.querySelectorAll('.tile');
+
+    board.style.width = "";
+    board.style.height = "";
+
+    if (size === 4) {
+        board.style.width = "80vh"; 
+        board.style.height = "80vh"; 
+
+        tiles.forEach(tile => {
+            tile.style.width = "20vh"; 
+            tile.style.height = "20vh";
+        });
+
+        console.log("Setting up a 4x4 grid");
+
+    } else if (size === 9) {
+        board.style.width = "72vh"; 
+        board.style.height = "72vh"; 
+        tiles.forEach(tile => {
+            tile.style.width = "8vh";
+            tile.style.height = "8vh";
+        });
+
+        console.log("Setting up a 9x9 grid");
+    } else {
+        console.error("Unsupported grid size!");
+    }
+}
+
+
 
 // hardcoded starting-boards,added to an array
 function smallRiddleTemplate1() {
@@ -72,10 +107,46 @@ function smallRiddleTemplate2() {
 let smallRiddleTemplates = [smallRiddleTemplate1, smallRiddleTemplate2]
 
 function bigRiddleTemplate1() {
-    arrayRows[0][1] = "3";
-    document.getElementById("01").innerHTML = "3";
+    arrayRows[0][4] = "8";
+    document.getElementById("04").innerHTML = "8";
+    arrayRows[0][6] = "1";
+    document.getElementById("06").innerHTML = "1";
+    arrayRows[1][7] = "4";
+    document.getElementById("17").innerHTML = "4";
+    arrayRows[1][8] = "3";
+    document.getElementById("18").innerHTML = "3";
+    arrayRows[2][0] = "5";
+    document.getElementById("20").innerHTML = "5";
+    arrayRows[3][4] = "7";
+    document.getElementById("34").innerHTML = "7";
+    arrayRows[3][6] = "8";
+    document.getElementById("36").innerHTML = "8";
+    arrayRows[4][6] = "1";
+    document.getElementById("46").innerHTML = "1";
+    arrayRows[5][1] = "2";
+    document.getElementById("51").innerHTML = "2";
+    arrayRows[5][4] = "3";
+    document.getElementById("54").innerHTML = "3";
+    arrayRows[6][0] = "6";
+    document.getElementById("60").innerHTML = "6";
+    arrayRows[6][7] = "7";
+    document.getElementById("67").innerHTML = "7";
+    arrayRows[6][8] = "5";
+    document.getElementById("68").innerHTML = "5";
+    arrayRows[7][2] = "3";
+    document.getElementById("72").innerHTML = "3";
+    arrayRows[7][3] = "4";
+    document.getElementById("73").innerHTML = "4";
+    arrayRows[8][3] = "2";
+    document.getElementById("83").innerHTML = "2";
+    arrayRows[8][6] = "6";
+    document.getElementById("86").innerHTML = "6";
 }
+
 let bigRiddleTemplates = [bigRiddleTemplate1]
+
+
+
 function setRiddleTemplate() {
     if (size == 4){
     (smallRiddleTemplates[Math.floor(Math.random() * smallRiddleTemplates.length)])()
@@ -174,7 +245,7 @@ function checkCols() {
 
 
 
-
+adatpCssToGamesize();
 setRiddleTemplate();
 enableTileInput();
 submitButton.addEventListener("click", submit);
