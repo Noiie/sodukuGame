@@ -1,9 +1,12 @@
 /////////////////////////////////////////////////////// Log in
 let allowedUsers = [
-    { name: "Noi", password: "1234" },
-    { name: "Naama", password: "1234" },
-    { name: "guest", password: "1234" }
+    { Username: "Noi", password: "1234" },
+    { Username: "Naama", password: "1234" },
+    { Username: "guest", password: "1234" }
 ];
+
+let firstUsers = JSON.stringify(allowedUsers);
+localStorage.setItem("firstUsers", firstUsers);
 
 function seeIfLoginValid() {
     const UsernameInserted = document.getElementById("loginUsername").value;
@@ -12,13 +15,17 @@ function seeIfLoginValid() {
     // allowedUsers = JSON.parse(localStorage.getItem("allowedUsers"));
 
     let confirmedUser = false;
-    for (let i = 0; i < allowedUsers.length; i++) {
-        if (allowedUsers[i].name === UsernameInserted && allowedUsers[i].password === PasswordInserted) {
+
+    let forNow = localStorage.getItem("firstUsers");
+    forNow = JSON.parse(forNow);
+    for (let i = 0; i < forNow.length; i++) {
+    
+        if (forNow[i].Username == UsernameInserted && forNow[i].password == PasswordInserted) {
             confirmedUser = true;
             break;
         }
     }
-
+    
     if (confirmedUser) {
         localStorage.setItem("loggedInUser", UsernameInserted);
         document.getElementById("playButton").style.display = "block";
@@ -29,8 +36,8 @@ function seeIfLoginValid() {
 
 
 ///////////////////////////////////////////////////// Sign up 
-if (!localStorage.getItem("allowedUsers"))
-    localStorage.setItem("allowedUsers", JSON.stringify([]));
+if (!localStorage.getItem("firstUsers"))
+    localStorage.setItem("firstUsers", JSON.stringify([]));
 
 let Form = { Username: "", password: "" };
 
@@ -45,8 +52,8 @@ function MakeUserPasswordObjects() {
 
 //adds sign up to local storage
 function SignedIn() {
-    let users = JSON.parse(localStorage.getItem("allowedUsers"));
-    localStorage.setItem("allowedUsers", JSON.stringify([...allowedUsers, Form]));
+    let users = JSON.parse(localStorage.getItem("firstUsers"));
+    localStorage.setItem("firstUsers", JSON.stringify([...allowedUsers, Form]));
     alert("we have your info and you can never leave");
     document.getElementById("secondPlayButton").style.display = "block";
 }
