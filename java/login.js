@@ -40,8 +40,7 @@ function SignedIn() {
     document.getElementById("secondPlayButton").style.display = "block";
 }
 
-//to do: in js: write commands to push key-value pairs from signed in array (stored in local storage) to logged in array (stored as objects)
-
-function pushSignedInUserToLoggedIn() {
-    let users = JSON.parse(localStorage.getItem("allowedUsers"));
-    users.push(signedInUser);}
+//still missing: commands to push key-value pairs from signed in array (stored in local storage) to logged in array (stored as objects)
+// function pushSignedInUserToLoggedIn() {
+//     let users = JSON.parse(localStorage.getItem("allowedUsers"));
+//     users.push(signedInUser);}
