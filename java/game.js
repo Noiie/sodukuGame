@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 /* to do:
     make game checker function
 
 */
+=======
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4
 
 let cl = console.log;
 let size = 4;
@@ -121,6 +124,7 @@ enableTileInput();
 submitButton.addEventListener("click", submit);
 
 
+<<<<<<< HEAD
 
 
 /* loop
@@ -136,6 +140,8 @@ for (let i = 0; i < arrayRows.length; i++) {
         }
     }
         */
+=======
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4
 function checkRows() {
     for (let i = 0; i < arrayRows.length; i++) {
         const unique = [...new Set(arrayRows[i])]
@@ -143,6 +149,10 @@ function checkRows() {
             console.log("repetitive nr in row")
             // make it go to fail page
             redirectFail();
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4
         }
 
     }
@@ -162,6 +172,10 @@ function checkCols() {
                 // make it go to fail page
                 redirectFail();
             }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4
         }
     }
 }
@@ -172,6 +186,13 @@ let lowerRightQ = [arrayRows[2][2], arrayRows[2][3], arrayRows[3][2], arrayRows[
 let upperRightQ = [arrayRows[0][2], arrayRows[0][3], arrayRows[1][2], arrayRows[1][3]]
 let allQuadrants = [upperLeftQ, lowerLeftQ, lowerRightQ, upperRightQ]
 
+<<<<<<< HEAD
+=======
+// function redirectFail() {
+//     window.location.replace("../html/home.html");
+//  }  
+redirectFail();
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4
 
 
 function checkBigSquare() {
@@ -188,6 +209,10 @@ function checkBigSquare() {
 
 }
 
+<<<<<<< HEAD
 function redirectFail() {
     window.location.replace("../html/home.html");
  } 
+=======
+
+>>>>>>> c4bd8577b291815d5d8424b00bfe5abe004fe6f4

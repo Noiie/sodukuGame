@@ -1,0 +1,124 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.wholeScreen {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 150px auto 110px 110px 110px 110px;
+    grid-template-areas:
+        's s s s s s s s'
+        'h h h h h h h l'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'm m m m m m m m'
+        'f f f f f f f f';
+}
+
+
+
+#snow {
+    grid-area: s;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+#snow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover}
+
+#logo {
+    grid-area: l;
+    height: 10px;
+    background-color: rgb(233, 200, 116);
+}
+
+header {
+    grid-area: h;
+    text-align: center;
+    line-height: 7em;
+    color: rgb(251, 248, 221);
+    background-color: rgb(163, 67, 67);
+    font-family: "Bebas Neue";
+    font-size: 1.5em;
+}
+
+main {
+    grid-area: m;
+    font-family: montserrat;
+    color: rgb(0, 31, 63);
+    background-color: rgb(0, 31, 63);
+}
+
+.poster {
+    margin: 5rem;
+    background-color: rgb(192, 214, 232);
+    opacity: 80%;
+    padding: 2rem;
+    line-height: 2em;
+    font-size: 1.5em;
+    color: rgb(0, 31, 63);
+    border: 10px solid rgb(163, 67, 67);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.thirdPoster {
+    margin: 5rem;
+    background-color: rgb(234, 216, 177);
+    opacity: 80%;
+    padding: 2rem;
+    line-height: 2em;
+    font-size: 1.5em;
+    color: rgb(0, 31, 63);
+    border: 10px solid rgb(163, 67, 67);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+footer {
+    grid-area: f;
+    background-color: rgb(19, 43, 63);
+ 
+}
+
+footer P{
+    color: black;
+}
+
+#containerForPictures {
+    display: flex;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 1em;
+    border: 4px aolid #363062;
+    box-shadow: 7px 7px 7px #636b96;
+    cursor: pointer; 
+
+
+}
+img:hover {
+    transform: scale(2, 2);
+
+}
